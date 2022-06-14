@@ -1,0 +1,75 @@
+int main()
+{
+    int i,j,k;
+    int a1[10],a2[10],c[20],size1,size2,size3,temp;
+    printf("enter the size of the array1");
+    scanf("%d",&size1);
+    printf("enter the values of the array 1:");
+    for(i=0;i<size1;i++)
+    {
+       scanf("%d",&a1[i]); 
+    }
+    printf("enter the size of the array2");
+    scanf("%d",&size2);
+    printf("enter the values of the array 2:");
+    for(i=0;i<size2;i++)
+    {
+       scanf("%d",&a2[i]); 
+    }
+       
+        for(i=0;i<size1;i++)
+   {
+       for(j=i+1;j<size1;j++)
+       {
+           if(a1[i]<a1[j])
+           {
+               temp=a1[i];
+               a1[i]=a1[j];
+               a1[j]=temp;
+               
+           }
+       }
+   }
+   printf("desending order is A1:");
+   for(i=0;i<size1;i++)
+   {
+      printf("%d\n",a1[i]) ;
+   }
+   for(i=0;i<size2;i++)
+   {
+       for(j=i+1;j<size2;j++)
+       {
+           if(a2[i]<a2[j])
+           {
+               temp=a2[i];
+               a2[i]=a2[j];
+               a2[j]=temp;
+               
+           }
+       }
+   }
+   printf("desending order is A2:");
+   for(i=0;i<size2;i++)
+   {
+      printf("%d\n",a2[i]) ; 
+   }
+    size3=(size1+size2);
+    for(i=0;i<size1;i++)
+    {
+        c[i]=a1[i];
+    }
+    for(j=0;j<size2;j++)
+    {
+        c[size1+j]=a2[j];
+    }
+    printf("merged array :");
+for(i=0;i<size3;i++)
+{
+    printf(" %d \t",c[i]);
+} 
+
+
+
+
+    return 0;
+}
